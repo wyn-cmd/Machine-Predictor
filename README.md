@@ -1,5 +1,6 @@
 # Machine-Predictor
 A practise python program that predicts housing prices using a CSV file, sklearn and pandas.
+**Please note that all csv file data is fictional, none of the data used and the subsequent predictions are accurate to the real world.**
 
 
 ## CSV file format:
