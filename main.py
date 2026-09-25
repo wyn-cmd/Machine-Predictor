@@ -8,6 +8,10 @@ def predict_by_house_type(data):
     for house_type, group in data.groupby('House type'):
         print(f"Predicting for {house_type}...")
         
+        if len(group) < 2:
+            print(f"Not enough data for {house_type}, skipping.")
+            continue
+            
         X = group[['Year']]
         y = group['Housing Prices']
 
