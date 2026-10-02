@@ -3,8 +3,8 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 
+# Performs linear regression on housing prices per house type to evaluate MSE and predict prices for the year 2020.
 def predict_by_house_type(data):
-    """Performs linear regression on housing prices per house type to evaluate MSE and predict prices for the year 2020."""
     for house_type, group in data.groupby('House type'):
         print(f"Predicting for {house_type}...")
         
@@ -33,6 +33,8 @@ def main():
         predict_by_house_type(data)
     except FileNotFoundError:
         print("Error: 'data.csv' not found.")
+    except pd.errors.EmptyDataError:
+        print("Error: 'data.csv' is empty.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
